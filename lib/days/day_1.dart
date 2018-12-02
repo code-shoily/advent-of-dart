@@ -16,12 +16,11 @@ int day_1_part_1() => processInput().reduce((a, b) => a + b);
 /// 83445 For me!
 int day_1_part_2() {
   var data = processInput();
-  var visited = Set<int>(), frequency = 0, idx = 0;
+  var visited = Set<int>();
+  var frequency = 0;
 
-  while (true) {
+  for (var idx = 0; visited.add(frequency); idx = (idx + 1) % data.length)
     frequency += data[idx];
-    if (visited.contains(frequency)) return frequency;
-    visited.add(frequency);
-    idx = (idx + 1) % data.length;
-  }
+
+  return frequency;
 }
