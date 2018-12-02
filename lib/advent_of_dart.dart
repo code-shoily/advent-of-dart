@@ -1,3 +1,3 @@
-import "days/day_1.dart";
+import "days/day_2.dart";
 
-currently() => day_1_part_2();
+currently() => day_2_part_1();
