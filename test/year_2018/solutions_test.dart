@@ -1,4 +1,4 @@
-import 'package:advent_of_dart/days/year_2018/solutions.dart';
+import 'package:advent_of_dart/year_2018/solutions.dart';
 import 'package:test/test.dart';
 
 void main() {

@@ -1,6 +1,6 @@
-/// Code for the solution of 2018 AoC, day 1.
+/// Code for the solution of 2018 AoC, day 2.
 ///
-/// Problem description can be seen [here](https://adventofcode.com/2018/day/1)
+/// Problem description can be seen [here](https://adventofcode.com/2018/day/2)
 import "package:advent_of_dart/helpers.dart";
 
 /// Read the raw [String] content from file and convert it to
