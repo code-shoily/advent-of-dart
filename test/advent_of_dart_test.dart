@@ -1,8 +1,7 @@
-import 'package:advent_of_dart/advent_of_dart.dart';
 import 'package:test/test.dart';
 
 void main() {
-  test('calculate', () {
-    expect(calculate(), 42);
+  test("1+1 is, was and shall forever be, true", () {
+    expect(1 + 1, equals(2));
   });
 }

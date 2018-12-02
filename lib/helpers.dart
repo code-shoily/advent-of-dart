@@ -8,5 +8,5 @@ import "dart:io";
 ///
 /// ```dart
 /// readFromFiles(day: 2, part: 1);```
-String readFromFiles({day, part}) =>
-    File("./lib/data/day_${day}_${part}.txt").readAsStringSync();
+String readFromFiles({year, day, part}) =>
+    File("./lib/data/$year/day_${day}_${part}.txt").readAsStringSync();
