@@ -1,3 +1,3 @@
 import 'package:advent_of_dart/year_2018/solutions.dart';
 
-currently() => day_3_part_1();
+currently() => day_3_part_2();
