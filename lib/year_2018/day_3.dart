@@ -1,6 +1,6 @@
-/// Code for the solution of 2018 AoC, day 2.
+/// Code for the solution of 2018 AoC, day 3.
 ///
-/// Problem description can be seen [here](https://adventofcode.com/2018/day/2)
+/// Problem description can be seen [here](https://adventofcode.com/2018/day/3)
 import "package:advent_of_dart/helpers.dart";
 
 /// Representing a fabric that has the attributes given

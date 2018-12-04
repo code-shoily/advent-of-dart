@@ -9,5 +9,8 @@ void main() {
     test('2: 2', () => expect(day_2_part_2(), 'mkcdflathzwsvjxrevymbdpoq'));
     test('3: 1', () => expect(day_3_part_1(), 110389));
     test('3: 2', () => expect(day_3_part_2(), 552));
+
+    test('4: 1', () => expect(day_4_part_1(), ''));
+    test('4: 2', () => expect(day_4_part_2(), ''));
   });
 }
