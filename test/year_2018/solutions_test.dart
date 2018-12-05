@@ -10,7 +10,7 @@ void main() {
     test('3: 1', () => expect(day_3_part_1(), 110389));
     test('3: 2', () => expect(day_3_part_2(), 552));
 
-    test('4: 1', () => expect(day_4_part_1(), ''));
-    test('4: 2', () => expect(day_4_part_2(), ''));
+    test('4: 1', () => expect(day_4_part_1(), 74743));
+    test('4: 2', () => expect(day_4_part_2(), 132484));
   });
 }
