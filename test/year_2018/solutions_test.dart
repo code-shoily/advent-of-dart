@@ -18,6 +18,8 @@ void main() {
     test('differentCases', () => expect(isOfDifferentCases("a", "a"), false));
 
     test('5: 1', () => expect(day_5_part_1(), 10496));
-    test('5: 2', () => expect(day_5_part_2(), 5774));
+
+    test('6: 1', () => expect(day_6_part_1(), 4284));
+    test('6: 2', () => expect(day_6_part_2(), 35490));
   });
 }
