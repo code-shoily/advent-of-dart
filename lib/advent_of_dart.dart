@@ -1,3 +1,4 @@
-import 'package:advent_of_dart/year_2018/solutions.dart';
+import 'package:advent_of_dart/year_2015/solutions.dart' as y2015;
+// import 'package:advent_of_dart/year_2018/solutions.dart' as y2018;
 
-currently() => day_6_part_2();
+currently() => y2015.day_1_part_1();
