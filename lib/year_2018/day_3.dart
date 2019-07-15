@@ -1,7 +1,7 @@
 /// Code for the solution of 2018 AoC, day 3.
 ///
 /// Problem description can be seen [here](https://adventofcode.com/2018/day/3)
-import "package:advent_of_dart/helpers.dart";
+import 'package:advent_of_dart/helpers.dart';
 
 /// Representing a fabric that has the attributes given
 /// in the problem statement with [right] and [bottom]
@@ -18,7 +18,7 @@ class _Claim {
 ///
 /// Example rule: #1255 @ 49,708: 13x25
 _Claim _getFabric(String line) {
-  var m = RegExp(r"#(\d+) @ (\d+),(\d+): (\d+)x(\d+)").allMatches(line).first;
+  var m = RegExp(r'#(\d+) @ (\d+),(\d+): (\d+)x(\d+)').allMatches(line).first;
 
   return _Claim(
       id: int.parse(m.group(1)),
@@ -61,7 +61,7 @@ bool _isNeverOverlapped(List<List<int>> grid, _Claim fabric) {
 
 /// Read the raw [String] content from file and convert it to [List<Fabric>].
 List<_Claim> _processInput() => readFromFiles(year: 2018, day: 3, part: 1)
-    .split("\n")
+    .split('\n')
     .map(_getFabric)
     .toList();
 

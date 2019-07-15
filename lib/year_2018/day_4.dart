@@ -1,7 +1,7 @@
 /// Code for the solution of 2018 AoC, day 4.
 ///
 /// Problem description can be seen [here](https://adventofcode.com/2018/day/4)
-import "package:advent_of_dart/helpers.dart";
+import 'package:advent_of_dart/helpers.dart';
 
 /// All relevant activities for this puzzle
 enum Activity { shiftStarts, sleeps, wakesUp }
@@ -43,7 +43,6 @@ class Queue {
   ///
   /// Most significant operations herein are dependant on the status of the [rebuild] method.
   ///
-  /// TODO: Add a flag determining if rebuild was called and stop all dependent methods from running
   /// if it is false.
   void rebuild() {
     int currentGuard;
@@ -52,24 +51,24 @@ class Queue {
     for (var activity in records) {
       if (currentGuard != null && !summary.containsKey(currentGuard)) {
         summary[currentGuard] = {
-          "asleepSince": null,
-          "sleepTimes": List<List<DateTime>>(),
-          "minutesAsleep": 0
+          'asleepSince': null,
+          'sleepTimes': List<List<DateTime>>(),
+          'minutesAsleep': 0
         };
       }
 
       switch (activity.what) {
         case Activity.sleeps:
           activity.who = currentGuard;
-          summary[activity.who]["asleepSince"] = activity.when;
+          summary[activity.who]['asleepSince'] = activity.when;
           break;
         case Activity.wakesUp:
           activity.who = currentGuard;
-          var asleepSince = summary[activity.who]["asleepSince"] as DateTime;
-          summary[activity.who]["asleepSince"] = null;
-          summary[activity.who]["minutesAsleep"] +=
+          var asleepSince = summary[activity.who]['asleepSince'] as DateTime;
+          summary[activity.who]['asleepSince'] = null;
+          summary[activity.who]['minutesAsleep'] +=
               (activity.when.difference(asleepSince).inMinutes);
-          (summary[activity.who]["sleepTimes"] as List<List<DateTime>>)
+          (summary[activity.who]['sleepTimes'] as List<List<DateTime>>)
               .add([asleepSince, activity.when]);
           break;
         case Activity.shiftStarts:
@@ -84,8 +83,8 @@ class Queue {
     var mostMinutesSlept = 0;
     var overlySleepyGuard = null;
     summary.forEach((k, v) {
-      if (v["minutesAsleep"] > mostMinutesSlept) {
-        mostMinutesSlept = v["minutesAsleep"];
+      if (v['minutesAsleep'] > mostMinutesSlept) {
+        mostMinutesSlept = v['minutesAsleep'];
         overlySleepyGuard = k;
       }
     });
@@ -105,7 +104,7 @@ class Queue {
       }
     }
 
-    (summary[id]["sleepTimes"] as List<List<DateTime>>).forEach((i) {
+    (summary[id]['sleepTimes'] as List<List<DateTime>>).forEach((i) {
       sleepTimeFrequency(i);
     });
 
@@ -117,10 +116,10 @@ class Queue {
       }
     });
     return {
-      "id": id,
-      "minute": sleepiestMinute,
-      "weight": max,
-      "point": overlySleepyGuard * sleepiestMinute
+      'id': id,
+      'minute': sleepiestMinute,
+      'weight': max,
+      'point': overlySleepyGuard * sleepiestMinute
     };
   }
 
@@ -141,10 +140,10 @@ class Queue {
     var max = 0;
 
     for (var profile in profiles) {
-      if (profile["weight"] > max) {
-        max = profile["weight"];
-        sleepiestMinute = profile["minute"];
-        consistentSleeper = profile["id"];
+      if (profile['weight'] > max) {
+        max = profile['weight'];
+        sleepiestMinute = profile['minute'];
+        consistentSleeper = profile['id'];
       }
     }
 
@@ -155,10 +154,10 @@ class Queue {
 /// Parses a line from the input file and converts it into a [GuardActivity]
 GuardActivity parseSentence(String sentence) {
   GuardActivity guardActivity;
-  var isSleepRegExp = RegExp(r".(\d{4}-\d{2}-\d{2} \d{2}:\d{2}). falls asleep");
-  var isWakingUpRegExp = RegExp(r".(\d{4}-\d{2}-\d{2} \d{2}:\d{2}). wakes up");
+  var isSleepRegExp = RegExp(r'.(\d{4}-\d{2}-\d{2} \d{2}:\d{2}). falls asleep');
+  var isWakingUpRegExp = RegExp(r'.(\d{4}-\d{2}-\d{2} \d{2}:\d{2}). wakes up');
   var isIdentificationRegExp =
-      RegExp(r".(\d{4}-\d{2}-\d{2} \d{2}:\d{2}). Guard #(\d+) begins shift");
+      RegExp(r'.(\d{4}-\d{2}-\d{2} \d{2}:\d{2}). Guard #(\d+) begins shift');
 
   if (isSleepRegExp.hasMatch(sentence)) {
     var m = isSleepRegExp.firstMatch(sentence);

@@ -1,7 +1,7 @@
 /// Code for the solution of 2018 AoC, day 5.
 ///
 /// Problem description can be seen [here](https://adventofcode.com/2018/day/5)
-import "package:advent_of_dart/helpers.dart";
+import 'package:advent_of_dart/helpers.dart';
 
 /// Read the raw [String].
 String _processInput() => readFromFiles(year: 2018, day: 5, part: 1);
@@ -34,7 +34,7 @@ day_5_part_2() {
 
   letters.forEach((letter) {
     var newSequence = reaction(
-        sequence.replaceAll(letter, "").replaceAll(letter.toLowerCase(), ""));
+        sequence.replaceAll(letter, '').replaceAll(letter.toLowerCase(), ''));
     minLength = newSequence.length < minLength ? newSequence.length : minLength;
   });
 

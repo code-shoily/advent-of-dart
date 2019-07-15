@@ -1,7 +1,7 @@
 /// Code for the solution of 2018 AoC, day 6.
 ///
 /// Problem description can be seen [here](https://adventofcode.com/2018/day/6)
-import "package:advent_of_dart/helpers.dart";
+import 'package:advent_of_dart/helpers.dart';
 
 class Point {
   int x, y;
@@ -18,8 +18,8 @@ class Point {
 
 /// Read the raw [String].
 List<Point> _processInput() => readFromFiles(year: 2018, day: 6, part: 1)
-    .split("\n")
-    .map((line) => line.split(",").map((coord) => int.parse(coord)).toList())
+    .split('\n')
+    .map((line) => line.split(',').map((coord) => int.parse(coord)).toList())
     .map((coord) => Point.fromList(coord))
     .toList();
 
@@ -36,7 +36,7 @@ Map<String, int> _findExtremes(List<Point> points) {
     if (point.y > maxY) maxY = point.y;
   }
 
-  return {"minX": minX, "maxX": maxX, "minY": minY, "maxY": maxY};
+  return {'minX': minX, 'maxX': maxX, 'minY': minY, 'maxY': maxY};
 }
 
 Map<String, dynamic> compute(List<Point> points, [threshold = 32]) {
@@ -45,12 +45,12 @@ Map<String, dynamic> compute(List<Point> points, [threshold = 32]) {
   var distances = Map<Point, int>();
   var extremes = _findExtremes(points);
 
-  for (var x = extremes["minX"]; x <= extremes["maxX"]; x++) {
-    for (var y = extremes["minX"]; y <= extremes["maxY"]; y++) {
+  for (var x = extremes['minX']; x <= extremes['maxX']; x++) {
+    for (var y = extremes['minX']; y <= extremes['maxY']; y++) {
       var current = Point(x: x, y: y);
       var minDistance;
       var cache = List<List<Point>>.generate(
-          extremes["maxX"] + extremes["maxY"], (i) => []);
+          extremes['maxX'] + extremes['maxY'], (i) => []);
 
       for (var point in points) {
         var distance = point - current;
@@ -66,10 +66,10 @@ Map<String, dynamic> compute(List<Point> points, [threshold = 32]) {
             ifAbsent: () => 1);
       }
 
-      if (x == extremes["minX"] ||
-          x == extremes["maxX"] ||
-          y == extremes["minY"] ||
-          y == extremes["maxY"]) {
+      if (x == extremes['minX'] ||
+          x == extremes['maxX'] ||
+          y == extremes['minY'] ||
+          y == extremes['maxY']) {
         if (cache[minDistance].length == 1)
           for (var i in cache[minDistance]) {
             edges.add(i);
@@ -88,9 +88,9 @@ Map<String, dynamic> compute(List<Point> points, [threshold = 32]) {
     if (v < threshold) proximalArea++;
   });
 
-  return {"max": maxArea, "proximalArea": proximalArea};
+  return {'max': maxArea, 'proximalArea': proximalArea};
 }
 
-day_6_part_1() => compute(_processInput())["max"];
+day_6_part_1() => compute(_processInput())['max'];
 
-day_6_part_2() => compute(_processInput(), 10000)["proximalArea"];
+day_6_part_2() => compute(_processInput(), 10000)['proximalArea'];

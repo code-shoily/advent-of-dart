@@ -1,4 +1,4 @@
-import "dart:io";
+import 'dart:io';
 
 /// Returns input data from text file. Takes [day] and [part].
 ///
@@ -9,4 +9,4 @@ import "dart:io";
 /// ```dart
 /// readFromFiles(day: 2, part: 1);```
 String readFromFiles({year, day, part}) =>
-    File("./lib/data/$year/day_${day}_${part}.txt").readAsStringSync();
+    File('./lib/data/$year/day_${day}_${part}.txt').readAsStringSync();

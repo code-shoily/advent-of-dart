@@ -1,7 +1,7 @@
 /// Code for the solution of 2018 AoC, day 2.
 ///
 /// Problem description can be seen [here](https://adventofcode.com/2018/day/2)
-import "package:advent_of_dart/helpers.dart";
+import 'package:advent_of_dart/helpers.dart';
 
 /// Read the raw [String] content from file and convert it to
 /// [List<String>].
@@ -22,7 +22,6 @@ List<int> _twiceOrThrice(String s) {
   return [twice, thrice];
 }
 
-/// 7221 for me!
 int day_2_part_1() => _processInput()
     .map(_twiceOrThrice)
     .reduce((a, b) => [a[0] + b[0], a[1] + b[1]])
@@ -43,7 +42,6 @@ Map<String, int> _findDuplicates(Iterable data) {
 String _removeFrom(String s, int i) =>
     s.substring(0, i) + s.substring(i + 1, s.length);
 
-/// mkcdflathzwsvjxrevymbdpoq for me!
 day_2_part_2() {
   List<Map<String, int>> frequencies = [];
 

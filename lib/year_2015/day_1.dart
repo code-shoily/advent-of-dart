@@ -1,7 +1,7 @@
 /// Code for the solution of 2015 AoC, day 1.
 ///
 /// Problem description can be seen [here](https://adventofcode.com/2015/day/1)
-import "package:advent_of_dart/helpers.dart";
+import 'package:advent_of_dart/helpers.dart';
 
 /// Read the raw [String] content from file and split out the list of commands
 List<String> _processInput() =>
