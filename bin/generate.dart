@@ -14,8 +14,8 @@ import 'package:advent_of_dart/helpers.dart';
 List<String> _processInput() =>
     readFromFiles(year: $year, day: $day, part: 1).split('\\n').toList();
 
-day_1_part_1() => _processInput();
-day_1_part_2() => _processInput();
+day_${day}_part_1() => _processInput();
+day_${day}_part_2() => _processInput();
 ''';
 
 /// Parse the argument and get year and day values. year should
@@ -25,7 +25,7 @@ List<int> parseArgument(List<String> argumentList) {
   final int day = int.parse(argumentList[1]);
   if (year > latestYear || year < 2015) throw ArgumentError();
   if (day < 1 || day > 25) throw ArgumentError();
-  return [day, year];
+  return [year, day];
 }
 
 main(List<String> arguments) {
@@ -43,10 +43,10 @@ main(List<String> arguments) {
       codeFile.writeAsStringSync(generateCode(year, day));
     }
   } on FormatException catch (_) {
-    print("Please enter valid number for <year> <day>");
+    print('Please enter valid number for <year> <day>');
   } on ArgumentError catch (_) {
-    print("Invalid values for year (2015-$latestYear) or day (1-25)");
+    print('Invalid values for year (2015-$latestYear) or day (1-25)');
   } catch (_) {
-    print("Usage: `pub run bin/generate.dart year day`");
+    print('Usage: `pub run bin/generate.dart year day`');
   }
 }
