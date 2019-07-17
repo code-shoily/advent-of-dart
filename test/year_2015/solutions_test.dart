@@ -7,5 +7,13 @@ void main() {
     test('1: 2', () => expect(day_1_part_2(), 1783));
     test('2: 1', () => expect(day_2_part_1(), 1606483));
     test('2: 2', () => expect(day_2_part_2(), 3842356));
+    test('3: 1', () => expect(day_3_part_1(), 2081));
+    test(
+        '3: splitUp',
+        () => expect(splitUp(['a', '1', 'b', '2', 'c', '3']), [
+              ['a', 'b', 'c'],
+              ['1', '2', '3']
+            ]));
+    test('3: 2', () => expect(day_3_part_2(), 2341));
   });
 }
