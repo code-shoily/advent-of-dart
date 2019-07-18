@@ -15,5 +15,7 @@ void main() {
               ['1', '2', '3']
             ]));
     test('3: 2', () => expect(day_3_part_2(), 2341));
+    test('4: 1', () => expect(day_4_part_1(), 254575));
+    test('4: 2', () => expect(day_4_part_2(), 1038736));
   });
 }

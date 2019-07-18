@@ -10,6 +10,7 @@ List<String> _processInput() => readFromFiles(year: 2015, day: 3, part: 1)
     .where((v) => v == '^' || v == 'v' || v == '<' || v == '>')
     .toList();
 
+/// Splits a list of string into two each having alternating elements
 List<List<String>> splitUp(List<String> inputList) {
   var first = <String>[];
   var second = <String>[];
