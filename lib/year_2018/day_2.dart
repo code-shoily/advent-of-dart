@@ -6,7 +6,7 @@ import 'package:advent_of_dart/helpers.dart';
 /// Read the raw [String] content from file and convert it to
 /// [List<String>].
 List<String> _processInput() =>
-    readFromFiles(year: 2018, day: 2, part: 1).split("\n").toList();
+    readFromFiles(year: 2018, day: 2, part: 1).split('\n').toList();
 
 List<int> _twiceOrThrice(String s) {
   var chars = Map<int, int>();

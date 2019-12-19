@@ -5,7 +5,7 @@ import 'package:advent_of_dart/helpers.dart';
 
 /// Read the raw [String] content from file and split out the list of commands
 List<String> _processInput() =>
-    readFromFiles(year: 2015, day: 1, part: 1).trim().split("").toList();
+    readFromFiles(year: 2015, day: 1, part: 1).trim().split('').toList();
 
 int totalSteps(List<String> data) =>
     data.fold(0, (floor, cmd) => cmd == '(' ? floor + 1 : floor - 1);

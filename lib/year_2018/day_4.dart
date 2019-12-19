@@ -180,13 +180,13 @@ GuardActivity parseSentence(String sentence) {
 
 /// Read the raw [String] content from file and convert it to [List<Fabric>].
 _processInput() =>
-    readFromFiles(year: 2018, day: 4, part: 1).split("\n").map(parseSentence);
+    readFromFiles(year: 2018, day: 4, part: 1).split('\n').map(parseSentence);
 
 day_4_part_1() {
   var q = Queue();
   _processInput().forEach((a) => q.enqueue(a));
   q.rebuild();
-  return q.getSleeperProfile(q.overlySleepyGuard)["point"];
+  return q.getSleeperProfile(q.overlySleepyGuard)['point'];
 }
 
 day_4_part_2() {

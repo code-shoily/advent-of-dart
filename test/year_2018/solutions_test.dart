@@ -12,10 +12,10 @@ void main() {
 
     test('4: 1', () => expect(day_4_part_1(), 74743));
     test('4: 2', () => expect(day_4_part_2(), 132484));
-    test('differentCases', () => expect(isOfDifferentCases("a", "A"), true));
-    test('differentCases', () => expect(isOfDifferentCases("A", "a"), true));
-    test('differentCases', () => expect(isOfDifferentCases("A", "A"), false));
-    test('differentCases', () => expect(isOfDifferentCases("a", "a"), false));
+    test('differentCases', () => expect(isOfDifferentCases('a', 'A'), true));
+    test('differentCases', () => expect(isOfDifferentCases('A', 'a'), true));
+    test('differentCases', () => expect(isOfDifferentCases('A', 'A'), false));
+    test('differentCases', () => expect(isOfDifferentCases('a', 'a'), false));
 
     test('5: 1', () => expect(day_5_part_1(), 10496));
 
