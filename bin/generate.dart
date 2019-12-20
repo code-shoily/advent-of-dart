@@ -1,6 +1,12 @@
 import 'dart:io';
 
-const int latestYear = 2018;
+
+int _getLatestYear() {
+  DateTime d = DateTime.now();
+  return d.month == 12 ? d.year : d.year - 1;
+}
+
+final int latestYear = _getLatestYear();
 
 /// Generate code stub for main code for AoC [year] [day]
 generateCode(int year, int day) => '''
